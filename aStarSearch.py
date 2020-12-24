@@ -3,7 +3,7 @@ import math
 # G is the movement cost from the start point A to the current square
 # H is the estimated movement cost from the current square to the destination
 # Coordinates are in the format (x, y), but retrieved in the format map[y][x]
-
+# Walls currently are marked as x's
 
 class AStarSearch:
     class CoordinatePair:

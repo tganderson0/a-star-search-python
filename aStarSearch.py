@@ -17,7 +17,7 @@ class AStarSearch:
             else:
                 self.gScore = parent.gScore + 1
 
-        def __getHScore(self, finalPos, straightLineCost=1, diagonalCost=1):
+        def __getHScore(self, finalPos, straightLineCost=1, diagonalCost=math.sqrt(2)):
             distanceX = math.fabs(self.x - finalPos.x)
             distanceY = math.fabs(self.y - finalPos.y)
             return straightLineCost * max(distanceX, distanceY) + (diagonalCost - straightLineCost) * min(distanceX,

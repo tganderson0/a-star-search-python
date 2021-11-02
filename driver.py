@@ -29,8 +29,10 @@ def printMapWithLocation(tempMap, currentX, currentY):
 
 
 def clear():
-    os.system('cls')
-
+    if sys.platform == "win32":
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def runFromMap(map):
     startX = -1
@@ -93,5 +95,8 @@ if __name__ == "__main__":
            ["x", " ", "x", "x", "x", " ", "x", "x", " ", " ", " ", " ", " ", " ", "x"],
            ["x", " ", " ", " ", " ", " ", " ", " ", "3", " ", " ", " ", " ", " ", "x"],
            ["x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x"]]
-
+    
+    if (len(sys.argv) < 2):
+            print("Please specify a map file")
+            exit()
     runFromMap(mapFromFile(sys.argv[1]))
